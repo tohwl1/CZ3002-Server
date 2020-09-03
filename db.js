@@ -9,6 +9,14 @@ const devConfig = new Pool({
   database: process.env.PG_DATABASE,
 });
 
+/*const devConfig = new Pool({
+  user: "postgres",
+  password: "password",
+  host: "localhost",
+  port: 5432,
+  database: "aseproj",
+});*/
+
 const proConfig = {
   connectionString: process.env.DATABASE_URL,
 };
@@ -16,5 +24,7 @@ const proConfig = {
 const pool = new Pool(
   process.env.NODE_ENV === "production" ? proConfig : devConfig
 );
+
+/*const pool = new Pool(devConfig);*/
 
 module.exports = pool;
