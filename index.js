@@ -142,7 +142,7 @@ app.get("/patientattempts/:patient_id", authorize, async (req, res) => {
       [user_id]
     );
 
-    if (!accessor_rights.rows[0].is_accesor) {
+    if (!accessor_rights.rows[0].is_accessor) {
       res.json("You are not a real doctor!");
     } else {
       const allUserAttempts = await pool.query(
