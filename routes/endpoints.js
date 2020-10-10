@@ -4,7 +4,7 @@ const cors = require("cors");
 const authorize = require("../middleware/authorization");
 
 //get list of doctors
-router.get("/listofdoctors", authorize, async (req, res) => {
+router.get("/listofdoctors", async (req, res) => {
   try {
     nameList = [];
     const listOfAccessors = await pool.query(
